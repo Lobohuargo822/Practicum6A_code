@@ -25,14 +25,23 @@ public class Game {
 
     // == is alleen locatie, .equals() = inhoud
 
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        Game game = (Game) o;
-        return naam.equals(game.naam);
+    public boolean equals(Object andereObject) {
+        boolean gelijkeObjecten = false;
+
+        if (andereObject instanceof Game){
+            Game andereGame = (Game) andereObject;
+
+            if (this.naam.equals(andereGame.naam) &&
+                    this.releaseJaar == andereGame.releaseJaar) {
+
+                gelijkeObjecten = true;
+            }
+        }
+        return gelijkeObjecten;
     }
 
     public String toString(){
-        String s = "idk";
+        String s = String.format("%s, uitgegeven in %d; nieuwprijs: €%.2f nu voor: €%.2f", naam, releaseJaar, nieuwPrijs, huidigeWaarde() );
         return s;
     }
 }

@@ -37,7 +37,10 @@ public class Persoon {
     }
 
     public String toString(){
-        String s = "idk";
+        String s = String.format("%s heeft een budget van €%.2f en bezit de volgende games:", naam, budget);
+        for(Game game:mijnGames){ // (type naam:deLijst)
+            s = s + "\n" + game.toString();                           // += != =+, s = s +
+        }
         return s;
     }
 }
