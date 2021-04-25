@@ -36,6 +36,19 @@ public class Persoon {
         return false;
     }
 
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> lijst) {
+        ArrayList<Game> nieuwList = new ArrayList<>();
+        for (Game g : lijst) {
+            for (Game gg : this.mijnGames) {
+                if (!(g.getReleaseJaar() == gg.getReleaseJaar() && g.getNaam().equals(gg.getNaam()))) {
+                    nieuwList.add(g);
+                }
+            }
+        }
+
+        return nieuwList;
+    }
+
     public String toString(){
         String s = String.format("%s heeft een budget van €%.2f en bezit de volgende games:", naam, budget);
         for(Game game:mijnGames){ // (type naam:deLijst)

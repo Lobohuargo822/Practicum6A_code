@@ -1,6 +1,5 @@
 package Practicum6A;
 
-import java.util.Objects;
 import java.time.LocalDate;
 
 public class Game {
@@ -38,6 +37,10 @@ public class Game {
             }
         }
         return gelijkeObjecten;
+    }
+
+    public int getReleaseJaar(){
+        return releaseJaar;
     }
 
     public String toString(){
